@@ -26,6 +26,22 @@ class Movie
     @id = movie['id'].to_i
   end
 
+  def update()
+     "UPDATE albums SET (title, genre, artist_id) = ($1, $2, $3) WHERE id= $4"
+    sql = "UPDATE movies SET
+    (
+      title, genre
+    )
+    =
+    (
+      $1,$2
+    )
+    WHERE id = $3"
+    values = [@title,@genre,@id]
+    movie = SqlRunner.run( sql, values ).first
+
+  end
+
   def self.all()
     sql = "SELECT * FROM movies"
     values = []
@@ -40,6 +56,14 @@ class Movie
     SqlRunner.run(sql, values)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM movies WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql,values)
+    movie_hash = results.first
+    movie = Movie.new(movie_hash)
+    return movie
+  end
   # def locations()
   #   sql = "SELECT locations.*
   #   from locations
