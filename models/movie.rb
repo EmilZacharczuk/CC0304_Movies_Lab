@@ -27,7 +27,7 @@ class Movie
   end
 
   def update()
-     "UPDATE albums SET (title, genre, artist_id) = ($1, $2, $3) WHERE id= $4"
+    
     sql = "UPDATE movies SET
     (
       title, genre
