@@ -12,14 +12,14 @@ class Movie
   def save()
     sql = "INSERT INTO movies
     (
-      title
+      title, genre
     )
     VALUES
     (
-      $1
+      $1,$2
     )
     RETURNING id"
-    values = [@title]
+    values = [@title,@genre]
     movie = SqlRunner.run( sql, values ).first
     @id = movie['id'].to_i
   end
@@ -37,17 +37,18 @@ class Movie
     values = []
     SqlRunner.run(sql, values)
   end
-  def locations()
-    sql = "SELECT locations.*
-    from locations
-    INNER JOIN visits ON visits.location_id = locations.id
-    WHERE visits.movie_id = $1
-    "
-    values = [@id]
-    locations = SqlRunner.run(sql,values)  #pull location from PG array-type object
-    results = locations.map {|location| Location.new(location)}
-    return results
-  end
+
+  # def locations()
+  #   sql = "SELECT locations.*
+  #   from locations
+  #   INNER JOIN visits ON visits.location_id = locations.id
+  #   WHERE visits.movie_id = $1
+  #   "
+  #   values = [@id]
+  #   locations = SqlRunner.run(sql,values)  #pull location from PG array-type object
+  #   results = locations.map {|location| Location.new(location)}
+  #   return results
+  # end
 
 
 end
