@@ -1,3 +1,5 @@
+require_relative('../db/sql_runner')
+
 class Movie
 
   attr_reader :id
@@ -28,7 +30,7 @@ class Movie
     sql = "SELECT * FROM movies"
     values = []
     movies = SqlRunner.run(sql, values)
-    result = movies.map { |movie| movie.new( movie ) }
+    result = movies.map { |movie| Movie.new( movie ) }
     return result
   end
 

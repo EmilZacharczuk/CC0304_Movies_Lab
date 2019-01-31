@@ -25,15 +25,15 @@ CREATE TABLE castings(
   id SERIAL4 PRIMARY KEY
 );
 
-INSERT INTO movies (title,genre,budget) VALUES ('Halloween','Horror', 1200000);
-INSERT INTO movies (title,genre,budget) VALUES ('Black Panther','Action', 2400000);
-INSERT INTO movies (title,genre,budget) VALUES ('Titanic','Drama', 3600000);
-INSERT INTO movies (title,genre,budget) VALUES ('Apocalypse Now','Classic', 900000);
-INSERT INTO movies (title,genre,budget) VALUES ('La La Land','Comedy', 2000000);
-INSERT INTO movies (title,genre,budget) VALUES ('Spiderman','Action', 2500000);
-
-INSERT INTO stars (first_name,last_name) VALUES ('Jack','Nicholson');
-INSERT INTO stars (first_name,last_name) VALUES ('Bette','Middler');
-INSERT INTO stars (first_name,last_name) VALUES ('Leo','DiCaprio');
-INSERT INTO stars (first_name,last_name) VALUES ('Tom','Jones');
-INSERT INTO stars (first_name,last_name) VALUES ('Scarlett','Johansen');
+-- INSERT INTO movies (title,genre,budget) VALUES ('Halloween','Horror', 1200000);
+-- INSERT INTO movies (title,genre,budget) VALUES ('Black Panther','Action', 2400000);
+-- INSERT INTO movies (title,genre,budget) VALUES ('Titanic','Drama', 3600000);
+-- INSERT INTO movies (title,genre,budget) VALUES ('Apocalypse Now','Classic', 900000);
+-- INSERT INTO movies (title,genre,budget) VALUES ('La La Land','Comedy', 2000000);
+--
+--
+-- INSERT INTO stars (first_name,last_name) VALUES ('Jack','Nicholson');
+-- INSERT INTO stars (first_name,last_name) VALUES ('Bette','Middler');
+-- INSERT INTO stars (first_name,last_name) VALUES ('Leo','DiCaprio');
+-- INSERT INTO stars (first_name,last_name) VALUES ('Tom','Jones');
+-- INSERT INTO stars (first_name,last_name) VALUES ('Scarlett','Johansen');
